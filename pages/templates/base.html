@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="footer, address, phone, icons"/>
+
+    <title>Intelligent Mock Interviewer</title>
+
+    <link rel="stylesheet" href="{% static "assets/header-login-signup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/footer-distributed-with-address-and-phones.css" %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+<header class="header-login-signup">
+
+    <div class="header-limiter">
+
+        <h1><a href="{% url 'index' %}">Intelligent Mock <span>Interviewer</span></a></h1>
+
+        {% if user.is_authenticated %}
+            <ul>
+                <li><a>Welcome {{ user.first_name }}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        {% else %}
+            <ul>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign up</a></li>
+            </ul>
+        {% endif %}
+
+    </div>
+
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3>Intelligent Mock <span>Interviewer</span></h3>
+
+        <p class="footer-company-about">
+            <span>About the project</span>
+            A smart interviewing system with the capability of judging the feasibility of a candidate based on his
+            emotions during the whole process along with his personality from the big-five scale (extraversion,
+            agreeableness, openness, conscientiousness, and neuroticism).
+        </p>
+
+        <div class="footer-icons">
+            <span style="color: white">GitHub Link of Project</span>
+            <a href="https://github.com/Shaoor-Munir/FinalYearProject"><i class="fa fa-github"></i></a>
+
+            <p class="footer-company-name">FAST NUCES &copy; 2018</p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

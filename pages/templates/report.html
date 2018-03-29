@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <script language="javascript" type="text/javascript">
+        $(window).load(function () {
+            $('#loading').hide();
+        });
+    </script>
+    <link rel="stylesheet" href={% static "assets/report.css" %}>
+
+    <h1 class="title"> Personality Report </h1>
+    <div id="container">
+        <div class="pricetab">
+            <h1> Openness </h1>
+            <div class="price">
+                <h2> {{ openness.average|floatformat:2 }} </h2>
+            </div>
+            <div class="infos">
+                <h3> Max (Video): {{ openness.max|floatformat:2 }}</h3>
+                <h3> Min (Video): {{ openness.min|floatformat:2 }}</h3>
+                <h3> Val (Audio): {{ openness.audio|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="pricetab">
+            <h1> Extraversion </h1>
+            <div class="price">
+                <h2> {{ extraversion.average|floatformat:2 }} </h2>
+            </div>
+            <div class="infos">
+                <h3> Max (Video): {{ extraversion.max|floatformat:2 }}</h3>
+                <h3> Min (Video): {{ extraversion.min|floatformat:2 }}</h3>
+                <h3> Val (Audio): {{ extraversion.audio|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="pricetab">
+            <h1> Conscentiousness </h1>
+            <div class="price">
+                <h2> {{ conscientiousness.average|floatformat:2 }} </h2>
+            </div>
+            <div class="infos">
+                <h3> Max (Video): {{ conscientiousness.max|floatformat:2 }}</h3>
+                <h3> Min (Video): {{ conscientiousness.min|floatformat:2 }}</h3>
+                <h3> Val (Audio): {{ conscientiousness.audio|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="pricetab">
+            <h1> Neuroticism </h1>
+            <div class="price">
+                <h2> {{ neuroticism.average|floatformat:2 }} </h2>
+            </div>
+            <div class="infos">
+                <h3> Max (Video): {{ neuroticism.max|floatformat:2 }}</h3>
+                <h3> Min (Video): {{ neuroticism.min|floatformat:2 }}</h3>
+                <h3> Val (Audio): {{ neuroticism.audio|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <div class="pricetab">
+            <h1> Agreeableness </h1>
+            <div class="price">
+                <h2> {{ agreeableness.average|floatformat:2 }} </h2>
+            </div>
+            <div class="infos">
+                <h3> Max (Video): {{ agreeableness.max|floatformat:2 }}</h3>
+                <h3> Min (Video): {{ agreeableness.min|floatformat:2 }}</h3>
+                <h3> Val (Audio): {{ agreeableness.audio|floatformat:2 }}</h3>
+            </div>
+        </div>
+        <h1 class="title"> Graphical Representation </h1>
+        <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['bar']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Trait Value', 'Average', 'Maximum (Video)', 'Minimum (Video)', 'Value (Audio)'],
+                    ['Openness', {{ openness.average|floatformat:2 }}, {{ openness.max|floatformat:2 }}, {{ openness.min|floatformat:2 }}, {{ openness.audio|floatformat:2 }}],
+                    ['Extraversion', {{ extraversion.average|floatformat:2 }}, {{ extraversion.max|floatformat:2 }}, {{ extraversion.min|floatformat:2 }}, {{ extraversion.audio|floatformat:2 }}],
+                    ['Conscientiousness', {{ conscientiousness.average|floatformat:2 }}, {{ conscientiousness.max|floatformat:2 }}, {{ conscientiousness.min|floatformat:2 }}, {{ conscientiousness.audio|floatformat:2 }}],
+                    ['Neuroticism', {{ neuroticism.average|floatformat:2 }}, {{ neuroticism.max|floatformat:2 }}, {{ neuroticism.min|floatformat:2 }}, {{ neuroticism.audio|floatformat:2 }}],
+                    ['Agreeableness', {{ agreeableness.average|floatformat:2 }}, {{ agreeableness.max|floatformat:2 }}, {{ agreeableness.min|floatformat:2 }}, {{ agreeableness.audio|floatformat:2 }}]
+                ]);
+
+                var options = {
+                    chart: {}
+                };
+
+                var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+            }
+        </script>
+    </div>
+
+{% endblock %}

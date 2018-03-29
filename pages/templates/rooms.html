@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{%  static "assets/pricing-table-horizontal.css"%}">
+
+    <div class="pricing-table-horizontal" style="margin-top: 100px">
+
+        <div class="plan">
+
+            <div class="plan-left-information">
+
+                <h2>Basic Plan</h2>
+
+                <p>Perfect for individuals and freelancers. You get plenty of space to host all your websites and enough traffic to power your business.</p>
+
+                <p class="plan-price">$9 / month</p>
+            </div>
+
+            <div class="plan-right-information">
+
+                <p>
+                    <span>Space</span>
+                    <strong>10 GB</strong>
+                </p>
+
+                <p>
+                    <span>Traffic</span>
+                    <strong>1 TB</strong>
+                </p>
+
+                <p>
+                    <span>Users</span>
+                    <strong>1</strong>
+                </p>
+
+                <div class="plan-order">
+                    <a href="#" class="order-a-plan">Order Now</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="plan featured">
+
+            <span class="popular-badge">Popular</span>
+
+            <div class="plan-left-information">
+                <h2>Pro Plan</h2>
+                <p>Perfect for small teams and companies. Your agency can host a large number of client websites, and you can create individual user accounts.</p>
+                <p class="plan-price">$15 / month</p>
+            </div>
+
+            <div class="plan-right-information">
+
+                <p>
+                    <span>Space</span>
+                    <strong>20 GB</strong>
+                </p>
+
+                <p>
+                    <span>Traffic</span>
+                    <strong>2 TB</strong>
+                </p>
+
+                <p>
+                    <span>Users</span>
+                    <strong>10</strong>
+                </p>
+
+                <div class="plan-order">
+                    <a href="#" class="order-a-plan">Order Now</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="plan">
+
+            <div class="plan-left-information">
+                <h2>Enterprise Plan</h2>
+                <p>Perfect for large companies and enterprises. You can meet the growing needs of your business and create accounts for all your employees.</p>
+                <p class="plan-price">$50 / month</p>
+            </div>
+
+            <div class="plan-right-information">
+
+                <p>
+                    <span>Space</span>
+                    <strong>100 GB</strong>
+                </p>
+
+                <p>
+                    <span>Traffic</span>
+                    <strong>10 TB</strong>
+                </p>
+
+                <p>
+                    <span>Users</span>
+                    <strong style="font-size: 26px; top: 4px;">∞</strong>
+                </p>
+
+                <div class="plan-order">
+                    <a href="#" class="order-a-plan">Contact us</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

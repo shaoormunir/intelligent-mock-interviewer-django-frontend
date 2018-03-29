@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+    <link rel="stylesheet" href={% static "assets/form-login.css" %}>
+<div class="main-content" style="margin-top: 100px">
+
+    <!-- You only need this form and the form-login.css -->
+
+    <form class="form-login" method="post" id="login-form">
+        {% csrf_token %}
+        <div class="form-log-in-with-email">
+
+            <div class="form-white-background">
+
+                <div class="form-title-row">
+                    <h1>Log in</h1>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit">Log in</button>
+                </div>
+
+            </div>
+
+            <a href="#" class="form-forgotten-password">Forgotten password &middot;</a>
+            <a href="{% url 'signup' %}" class="form-create-an-account">Create an account &rarr;</a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

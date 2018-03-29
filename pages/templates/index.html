@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+    <link rel="stylesheet" href="{% static "assets/upload.css" %}">
+
+    <div class="index-main">
+        <div class="frame">
+            <div class="center">
+                <div class="bar"></div>
+                <div class="title">Drop video or click on the cloud</div>
+                <form method="post" id="video_form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="dropzone">
+                        <div class="content">
+                            <img src="http://100dayscss.com/codepen/upload.svg" class="upload">
+                            <span class="filename"></span>
+                            <input type="file" class="input" name="interview_video">
+                        </div>
+                    </div>
+                    <img src="http://100dayscss.com/codepen/syncing.svg" class="syncing">
+                    <img src="http://100dayscss.com/codepen/checkmark.svg" class="done">
+                    <div class="upload-btn" data-target="{% url 'login' %}">Upload file</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src='http://100dayscss.com/codepen/js/jquery.min.js'></script>
+
+
+
+    <script src="{% static "assets/js/upload.js" %}"></script>
+
+{% endblock %}

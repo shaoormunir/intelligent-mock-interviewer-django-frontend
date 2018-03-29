@@ -1,0 +1,148 @@
+
+.pricing-table-horizontal {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+    margin-bottom: 75px;
+}
+
+.pricing-table-horizontal .plan {
+	display: block;
+	position: relative;
+	margin: 0 auto 50px auto;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.08);
+	max-width: 555px;
+	border: 1px solid #dcdcdc;
+	padding: 30px 0;
+	overflow: hidden;
+}
+
+.pricing-table-horizontal .plan-left-information {
+	display: inline-block;
+	text-align: left;
+	width: 300px;
+	margin-right: 30px;
+}
+
+.pricing-table-horizontal .plan-right-information {
+	display: inline-block;
+	width: 140px;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.pricing-table-horizontal .plan-left-information h2 {
+	display: block;
+	color:  #5b6e8b;
+	font-size: 24px;
+	margin: 0 0 20px 0;
+}
+
+.pricing-table-horizontal .plan-left-information p {
+	color:  #7a7a7a;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.pricing-table-horizontal .plan-left-information .plan-price {
+	display: block;
+	color:  #dfa423;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.pricing-table-horizontal .plan-right-information p {
+	text-align: left;
+	margin: 0 0 15px 5px;
+}
+
+.pricing-table-horizontal .plan-right-information p span {
+	color:  #6c6b6b;
+	font-size: 13px;
+	line-height: 1;
+	font-weight: bold;
+}
+
+.pricing-table-horizontal .plan-right-information p strong {
+	color:  #608ba1;
+	font-size: 18px;
+	line-height: 0;
+	position: relative;
+	margin-left: 10px;
+	top: 2px;
+	white-space: nowrap;
+}
+
+.pricing-table-horizontal .plan-order {
+	margin: 50px 0 0 0;
+}
+
+.pricing-table-horizontal .plan-order a.order-a-plan {
+	border-radius: 2px;
+	color: #ffffff;
+	background-color: #efa154;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 13px 25px;
+	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+/* Featured Plan */
+
+.pricing-table-horizontal .featured .popular-badge {
+	position: absolute;
+	right: -27px;
+	top: 13px;
+	background-color: #6cc76a;
+	box-shadow: -1px 1px 1px 0 rgba(0, 0, 0, 0.09);
+	width: 105px;
+	height: 28px;
+	text-align: center;
+	line-height: 2.5;
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: bold;
+
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+
+	.pricing-table-horizontal .plan {
+		padding: 30px 30px 50px;
+	}
+
+	.pricing-table-horizontal .plan-left-information .plan-price{
+		margin-top:20px;
+	}
+
+	.pricing-table-horizontal .plan-left-information {
+		display: block;
+		margin: 0;
+		width: auto;
+		text-align: center;
+	}
+
+	.pricing-table-horizontal .plan-right-information {
+		display: block;
+		margin: 0;
+		width: auto;
+		text-align: center;
+	}
+
+	.pricing-table-horizontal .plan-right-information p {
+		text-align: center;
+	}
+
+	.pricing-table-horizontal .plan-right-information .plan-order {
+		margin: 35px 0 0 0;
+	}
+}
